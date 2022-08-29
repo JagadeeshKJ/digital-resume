@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --mainTextColor-light:#000;
+    --secondaryTextColor-light:rgb(51 51 51);
+    --mainLinkColor-light:#0da2b8;
+    --mainBorderColor-light:rgb(218, 218, 218);
+    --mainBgColor-light:rgb(249, 250,251);
+
+    --mainTextColor-dark:#fff;
+    --secondaryTextColor-dark:#adb0b1;
+    --mainLinkColor-dark:rgb(30, 190,214);
+    --mainBorderColor-dark:#2b3031;
+    --mainBgColor-dark:#131415;
+
+    --mainTextColor:var(--mainTextColor-light);
+    --secondaryTextColor:var(--secondaryTextColor-light);
+    --mainLinkColor:var(--mainLinkColor-light);
+    --mainBorderColor:var(--mainBorderColor-light);
+    --mainBgColor:var(--mainBgColor-light);
+}
+
+*{
+    font-family: 'Readex Pro';
+    line-height: 1.5em;
+    box-sizing: border-box;
+    color: var(--mainTextColor);
+}
+
+body{
+    background-color: var(--mainBgColor);
+}
+
+p, span, li{
+    color: var(--secondaryTextColor);
+    font-size: 1em;
+}
+
+a{
+    text-decoration: none;
+    color: var(--mainLinkColor);
+    font-size: 500;
+}
+
+li{
+    line-height: 1.9em;
+}
+
+#container{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section--page{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+/* Wrapper-Hero */
+#wrapper--hero{
+    display: flex;
+    align-items: center;
+    gap: 4em;
+}
+
+#username{
+    font-size: 3em;
+    line-height: 1em;
+}
+
+#bio, a{
+    font-weight: 300;
+}
+
+/* #pic{
+    border-radius: 50%;
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+} */
+
+#email{
+    color: var(--mainTextColor);
+}
+
+/* Social Media Links */
+#social--links{
+    display: flex;
+    column-gap: 1em;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#social--links a{
+    font-size: 0.9em;
+    color: var(--secondaryTextColor);
+    transition: 0.3s;
+}
+
+#social--links a:hover{
+    color: var(--mainLinkColor);
+}
+
+#qualifications--list{
+    list-style: none;
+}
+
+/* Tech Stack */
+#wrapper--techstack--items{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    font-size: 0.9em;
+}
+
+.card--techstack{
+    border: 1px solid var(--mainBorderColor);
+    border-radius: 5px;
+    padding: 0.5em 1em;
+}
+
+/* Work History */
+.card--work-history{
+    margin: 3em 0;
+    padding-left: 2em;
+    border-left: 1px solid var(--mainBorderColor);
+}
+
+.line-break{
+    background-color: var(--mainBorderColor);
+    height: 1px;
+}
+
+/* Projects */
+.card--project{
+    padding: 1em 0;
+    border-top: 1px solid var(--mainBorderColor);
+}
+
+.card--project a{
+    color: var(--mainTextColor);
+    transition: .3s;
+}
+
+.card--project a:hover{
+    color: var(--mainLinkColor);
+}
+
+@media(max-width: 600px){
+    #wrapper--hero{
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .section--page{
+        padding: 1em 0;
+    }
+
+    .card--work-history{
+        border-left: none;
+        padding-left: 0;
+    }
+
+    #qualifications--list{
+        padding: 0;
+    }
+}
+
+
+/* Dark Mode */
+.dark-mode {
+    background-color: var(--mainBgColor-dark);
+}
+
+/* Styling the checkbox input */
+#checkbox{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    appearance: none;
+    -webkit-appearance : none;
+    -moz-appearance : none;
+    -o-appearance : none;
+    width: 60px;
+    height: 30px;
+    background: black;
+    border-radius: 22px;
+    cursor: pointer;
+    outline: none;
+}
+/* styling the circle inside the checkbox input */
+#checkbox::before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color:white;
+    border-radius: 35px;
+    top: 2px;
+    left: 2px;
+    cursor: pointer;
+    transition: .3s linear;
+}
+/* moving the checkbox circle when it's toggled by the user */
+#checkbox:checked::before{
+    left: 35px;
+}
+/* changing the color of the checkbox when it's toggled */
+#checkbox:checked{
+    background: rgb(12, 177, 81);
+}
+
+#checkbox:checked ~ #container{
+    --mainTextColor:var(--mainTextColor-dark);
+    --secondaryTextColor:var(--secondaryTextColor-dark);
+    --mainLinkColor:var(--mainLinkColor-dark);
+    --mainBorderColor:var(--mainBorderColor-dark);
+    --mainBgColor:var(--mainBgColor-dark);
+}
